@@ -4,3 +4,6 @@ tslint.json
 yarn-error.log
 docs
 example
+nest-cli.json
+tsconfig*.json
+.prettierrc

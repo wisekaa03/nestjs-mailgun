@@ -40,7 +40,7 @@ export class MailgunService {
           'h:X-Mailgun-Variables': JSON.stringify(data.templateVariables),
         }
       : data;
-    this.mailgun.messages.create(domain, dataSend);
+    return this.mailgun.messages.create(domain, dataSend);
   };
 
   public validateEmail = async (email: string): Promise<ValidationResult> =>
