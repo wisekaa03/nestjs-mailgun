@@ -17,11 +17,11 @@ import {
   MultipleMembersData,
   NewMultipleMembersResponse,
 } from 'mailgun.js/dist/lib/interfaces/mailListMembers';
-import APIError from 'mailgun.js/dist/lib/error';
+import type APIError from 'mailgun.js/dist/lib/error';
 import { MAILGUN_CONFIGURATION } from './constants';
 import type { EmailOptions } from './interfaces';
 
-export class MailgunError extends APIError {}
+export type MailgunError = APIError;
 
 @Injectable()
 export class MailgunService {
