@@ -13,7 +13,7 @@ export interface EmailOptions {
   text?: string;
   html?: string;
   template?: string;
-  templateVariables?: Record<string, string>;
+  templateVariables?: Record<string, any>;
   attachment?: any;
   cc?: string | string[];
   bcc?: string | string[];

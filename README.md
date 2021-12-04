@@ -7,10 +7,10 @@
 </div>
 
 <h3 align="center">NestJS Mailgun</h3>
-<a href="https://www.npmjs.com/package/@nextnm/nestjs-mailgun"><img src="https://img.shields.io/npm/v/@nextnm/nestjs-mailgun.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/@nextnm/nestjs-mailgun"><img src="https://img.shields.io/npm/l/@nextnm/nestjs-mailgun.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/@nextnm/nestjs-mailgun"><img src="https://img.shields.io/npm/dm/@nextnm/nestjs-mailgun.svg" alt="NPM Downloads" /></a>
-<a href="https://github.com/NextNC/nestjs-mailgun/actions/workflows/tests.yml"><img src="https://github.com/NextNC/nestjs-mailgun/actions/workflows/tests.yml/badge.svg" alt="Test Package" /></a>
+<a href="https://www.npmjs.com/package/nestjs-mailgun"><img src="https://img.shields.io/npm/v/nestjs-mailgun.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/nestjs-mailgun"><img src="https://img.shields.io/npm/l/nestjs-mailgun.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/nestjs-mailgun"><img src="https://img.shields.io/npm/dm/nestjs-mailgun.svg" alt="NPM Downloads" /></a>
+<a href="https://github.com/wisekaa03/nestjs-mailgun/actions/workflows/tests.yml"><img src="https://github.com/wisekaa03/nestjs-mailgun/actions/workflows/tests.yml/badge.svg" alt="Test Package" /></a>
 
 <div align="center">
   <a href="https://nestjs.com" target="_blank">
@@ -26,7 +26,7 @@ It supports sending, verifying emails and list operations, but later more will b
 ### Installation
 
 ```bash
-npm install @nextnm/nestjs-mailgun
+npm install nestjs-mailgun
 ```
 
 ### Usage
@@ -34,7 +34,7 @@ npm install @nextnm/nestjs-mailgun
 #### Importing module
 
 ```typescript
-import { MailgunModule } from '@nextnm/nestjs-mailgun';
+import { MailgunModule } from 'nestjs-mailgun';
 @Module({
   imports: [
     MailgunModule.forRoot({
@@ -54,7 +54,7 @@ export class YourModule {}
 #### Importing module Async
 
 ```typescript
-import { MailgunModule } from '@nextnm/nestjs-mailgun';
+import { MailgunModule } from 'nestjs-mailgun';
 @Module({
   imports: [
     MailgunModule.forAsyncRoot({
@@ -93,8 +93,8 @@ interface EmailOptions {
 #### Calling Send Method
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun'
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun'
 
 @Injectable()
 export class YourService {
@@ -125,8 +125,8 @@ export class YourService {
 To check if an email is real or not.
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -142,8 +142,8 @@ To create a list of emails
 you need parameter data type CreateUpdateList which contain
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -158,8 +158,8 @@ export class YourService {
 To destroy a list of emails
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -174,8 +174,8 @@ export class YourService {
 To Get a list of emails
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -199,8 +199,8 @@ reply_preference?: 'list' | 'sender';
 }
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -224,8 +224,8 @@ upsert?: 'yes' | 'no';
 }
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -246,8 +246,8 @@ limit?: number;
 }
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -262,8 +262,8 @@ export class YourService {
 To update member of the list
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -282,8 +282,8 @@ export class YourService {
 To destroy member of the list
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun';
+import { MailgunService } from 'nestjs-mailgun';
+import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -310,6 +310,7 @@ This project is not endorsed by or affiliated with [Mailgun](http://www.mailgun.
 
 ## Author
 
+**Stanislav V Vyaliy [Site](https://github.com/wisekaa03)**
 **Nuno Carvalhão [Site](https://nunocarvalhao.com)**
 
 ## License

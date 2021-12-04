@@ -1,8 +1,8 @@
 {
   "name": "nestjs-mailgun",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "NestJS provider for sending emails with mailgun",
-  "author": "Nuno Carvalhão <nuno.carvalhao@gmail.com>, Stanislav V Vyaliy <wisekaa03@gmail.com>",
+  "author": "Stanislav V Vyaliy <wisekaa03@gmail.com>, Nuno Carvalhão <nuno.carvalhao@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
