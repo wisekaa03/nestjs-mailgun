@@ -7,6 +7,7 @@
   "main": "dist/index.js",
   "files": [
     "dist/**/*",
+    "src/**/*",
     "*.md"
   ],
   "scripts": {
@@ -22,6 +23,7 @@
   },
   "keywords": [
     "nestjs",
+    "nest",
     "mailgun",
     "email"
   ],
