@@ -1,9 +1,5 @@
 import FormData from 'form-data';
-import {
-  Injectable,
-  Inject,
-  InternalServerErrorException,
-} from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 import Mailgun from 'mailgun.js';
 import Client from 'mailgun.js/dist/lib/client';
 import Options from 'mailgun.js/dist/lib/interfaces/Options';
@@ -25,6 +21,8 @@ import APIError from 'mailgun.js/dist/lib/error';
 import { MAILGUN_CONFIGURATION } from './constants';
 import type { EmailOptions } from './interfaces';
 
+export class MailgunError extends APIError {}
+
 @Injectable()
 export class MailgunService {
   private readonly mailgun: Client;
@@ -45,93 +43,56 @@ export class MailgunService {
           'h:X-Mailgun-Variables': JSON.stringify(data.templateVariables),
         }
       : data;
-    return this.mailgun.messages
-      .create(domain, dataSend)
-      .catch((error: APIError) => {
-        throw new InternalServerErrorException(error, error?.details);
-      });
+
+    return this.mailgun.messages.create(domain, dataSend);
   };
 
   public validateEmail = async (email: string): Promise<ValidationResult> =>
-    this.mailgun.validate.get(email).catch((error: APIError) => {
-      throw new InternalServerErrorException(error, error?.details);
-    });
+    this.mailgun.validate.get(email);
 
   public createList = async (data: CreateUpdateList): Promise<MailingList> =>
-    this.mailgun.lists.create(data).catch((error: APIError) => {
-      throw new InternalServerErrorException(error, error?.details);
-    });
+    this.mailgun.lists.create(data);
 
   public destroyList = async (
     mailListAddress: string,
-  ): Promise<DestroyedList> =>
-    this.mailgun.lists.destroy(mailListAddress).catch((error: APIError) => {
-      throw new InternalServerErrorException(error, error?.details);
-    });
+  ): Promise<DestroyedList> => this.mailgun.lists.destroy(mailListAddress);
 
   public getList = async (mailListAddress: string): Promise<MailingList> =>
-    this.mailgun.lists.get(mailListAddress).catch((error: APIError) => {
-      throw new InternalServerErrorException(error, error?.details);
-    });
+    this.mailgun.lists.get(mailListAddress);
 
   public updateList = async (
     mailListAddress: string,
     data: CreateUpdateList,
-  ): Promise<MailingList> =>
-    this.mailgun.lists
-      .update(mailListAddress, data)
-      .catch((error: APIError) => {
-        throw new InternalServerErrorException(error, error?.details);
-      });
+  ): Promise<MailingList> => this.mailgun.lists.update(mailListAddress, data);
 
   public listAddMember = async (
     mailListAddress: string,
     data: CreateUpdateMailListMembers,
   ): Promise<MailListMember> =>
-    this.mailgun.lists.members
-      .createMember(mailListAddress, data)
-      .catch((error: APIError) => {
-        throw new InternalServerErrorException(error, error?.details);
-      });
+    this.mailgun.lists.members.createMember(mailListAddress, data);
 
   public listGetMembers = async (
     mailListAddress: string,
     query?: MailListMembersQuery,
   ): Promise<MailListMember[]> =>
-    this.mailgun.lists.members
-      .listMembers(mailListAddress, query)
-      .catch((error: APIError) => {
-        throw new InternalServerErrorException(error, error?.details);
-      });
+    this.mailgun.lists.members.listMembers(mailListAddress, query);
 
   public listCreateMembers = async (
     mailListAddress: string,
     data: MultipleMembersData,
   ): Promise<NewMultipleMembersResponse> =>
-    this.mailgun.lists.members
-      .createMembers(mailListAddress, data)
-      .catch((error: APIError) => {
-        throw new InternalServerErrorException(error, error?.details);
-      });
+    this.mailgun.lists.members.createMembers(mailListAddress, data);
 
   public listupdateMember = async (
     address: string,
     memberAddress: string,
     data: CreateUpdateMailListMembers,
   ): Promise<MailListMember> =>
-    this.mailgun.lists.members
-      .updateMember(address, memberAddress, data)
-      .catch((error: APIError) => {
-        throw new InternalServerErrorException(error, error?.details);
-      });
+    this.mailgun.lists.members.updateMember(address, memberAddress, data);
 
   public listDestroyMember = async (
     address: string,
     memberAddress: string,
   ): Promise<DeletedMember> =>
-    this.mailgun.lists.members
-      .destroyMember(address, memberAddress)
-      .catch((error: APIError) => {
-        throw new InternalServerErrorException(error, error?.details);
-      });
+    this.mailgun.lists.members.destroyMember(address, memberAddress);
 }
