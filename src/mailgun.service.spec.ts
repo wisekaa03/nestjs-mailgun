@@ -33,14 +33,14 @@ describe('MailgunService', () => {
       service.createEmail(process.env.MAILGUN_DOMAIN, {
         from: 'package@test.com',
         subject: 'TEST',
-        to: 'benfica000@gmail.com',
+        to: 'wisekaa03@gmail.com',
         text: 'Test was successful',
       }),
     ).resolves.toBeDefined());
 
   // it('Validate email', () => {
   //   return expect(
-  //     service.validateEmail('nuno.carvalhao@gmail.com'),
+  //     service.validateEmail('wisekaa03@gmail.com'),
   //   ).resolves.toBeDefined();
   // });
 });
