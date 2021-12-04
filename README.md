@@ -38,11 +38,11 @@ import { MailgunModule } from 'nestjs-mailgun';
 @Module({
   imports: [
     MailgunModule.forRoot({
-      username: 'string',
+      username: 'api',
       key: 'string',
       public_key: 'string', // OPTIONAL
-      timeout: 'number', // OPTIONAL
-      url: 'string', // OPTIONAL // default: 'api.mailgun.net'. Note that if you are using the EU region the host should be set to 'api.eu.mailgun.net'
+      timeout: 'number', // OPTIONAL, in milliseconds
+      url: 'string', // OPTIONAL, default: 'api.mailgun.net'. Note that if you are using the EU region the host should be set to 'api.eu.mailgun.net'
     }),
   ],
   providers: [],
@@ -60,11 +60,11 @@ import { MailgunModule } from 'nestjs-mailgun';
     MailgunModule.forAsyncRoot({
       useFactory: async () => {
         return {
-          username: 'string',
+          username: 'api',
           key: 'string',
           public_key: 'string', // OPTIONAL
-          timeout: 'number', // OPTIONAL
-          url: 'string', // OPTIONAL // default: 'api.mailgun.net'. Note that if you are using the EU region the host should be set to 'api.eu.mailgun.net'
+          timeout: 'number', // OPTIONAL, in milliseconds
+          url: 'string', // OPTIONAL, default: 'api.mailgun.net'. Note that if you are using the EU region the host should be set to 'api.eu.mailgun.net'
         };
       },
     }),
