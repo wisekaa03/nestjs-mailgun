@@ -26,7 +26,7 @@ It supports sending, verifying emails and list operations, but later more will b
 ### Installation
 
 ```bash
-npm install nestjs-mailgun
+yarn add nestjs-mailgun
 ```
 
 ### Usage
@@ -85,7 +85,10 @@ interface EmailOptions {
   text?: string;
   html?: string;
   template?: string;
-  attachment?;
+  attachment?: any;
+  cc?: string | string[];
+  bcc?: string | string[];
+  'o:testmode'?: 'yes' | 'no';
   'h:X-Mailgun-Variables'?: string;
 }
 ```
