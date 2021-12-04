@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { MAILGUN_CONFIGURATION } from '../../../nestjs-mailgun/tokens/tokens';
+
+import { MAILGUN_CONFIGURATION } from './constants';
 import { MailgunService } from './mailgun.service';
 
 describe('MailgunService', () => {
@@ -27,16 +28,15 @@ describe('MailgunService', () => {
     expect(service).toBeDefined();
   });
 
-  it('Send email', () => {
-    return expect(
+  it('Send email', () =>
+    expect(
       service.createEmail(process.env.MAILGUN_DOMAIN, {
         from: 'package@test.com',
         subject: 'TEST',
         to: 'benfica000@gmail.com',
         text: 'Test was successful',
       }),
-    ).resolves.toBeDefined();
-  });
+    ).resolves.toBeDefined());
 
   // it('Validate email', () => {
   //   return expect(

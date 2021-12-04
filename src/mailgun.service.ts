@@ -1,10 +1,9 @@
+import FormData from 'form-data';
 import { Injectable, Inject } from '@nestjs/common';
-import { MAILGUN_CONFIGURATION } from '../../tokens/tokens';
 import Mailgun from 'mailgun.js';
 import Client from 'mailgun.js/dist/lib/client';
 import Options from 'mailgun.js/dist/lib/interfaces/Options';
-import { MailgunEmailModel } from '../../../nestjs-mailgun/classes/mailgun-email-model';
-import FormData from 'form-data';
+import type { ValidationResult } from 'mailgun.js/dist/lib/interfaces/Validate';
 import {
   CreateUpdateList,
   DestroyedList,
@@ -18,20 +17,13 @@ import {
   MultipleMembersData,
   NewMultipleMembersResponse,
 } from 'mailgun.js/dist/lib/interfaces/mailListMembers';
+import { MAILGUN_CONFIGURATION } from './constants';
+import type { EmailOptions } from './interfaces';
 
-export interface EmailOptions {
-  from: string;
-  to: string | string[];
-  subject: string;
-  text?: string;
-  html?: string;
-  template?: string;
-  attachment?;
-  'h:X-Mailgun-Variables'?: string;
-}
 @Injectable()
 export class MailgunService {
   private readonly mailgun: Client;
+
   constructor(
     @Inject(MAILGUN_CONFIGURATION) private readonly configuration: Options,
   ) {
@@ -40,17 +32,19 @@ export class MailgunService {
 
   public createEmail = async (
     domain: string,
-    data: EmailOptions | MailgunEmailModel,
-  ): Promise<any> => this.mailgun.messages.create(domain, data);
+    data: EmailOptions,
+  ): Promise<any> => {
+    const dataSend = data.templateVariables
+      ? {
+          ...data,
+          'h:X-Mailgun-Variables': JSON.stringify(data.templateVariables),
+        }
+      : data;
+    this.mailgun.messages.create(domain, dataSend);
+  };
 
-  public validateEmail = async (
-    email: string,
-  ): Promise<{
-    address: string;
-    did_you_mean: string;
-    is_valid: boolean;
-    parts: { display_name: string; domain: string; local_part: string };
-  }> => this.mailgun.validate.get(email);
+  public validateEmail = async (email: string): Promise<ValidationResult> =>
+    this.mailgun.validate.get(email);
 
   public createList = async (data: CreateUpdateList): Promise<MailingList> =>
     this.mailgun.lists.create(data);

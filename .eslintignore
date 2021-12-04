@@ -1,0 +1,6 @@
+node_modules
+.vscode
+build
+public/bundle.js
+.history
+docker/

@@ -1,7 +1,3 @@
-// export public api from here
-// for example:
-// export * from './decorators';
-export { MailgunModule } from './nestjs-mailgun/mailgun.module';
-export { OptionsAsync } from './nestjs-mailgun/configuration';
-export { MailgunService } from './nestjs-mailgun/services/relay/mailgun.service';
-export { EmailOptions } from './nestjs-mailgun/services/relay/mailgun.service';
+export { MailgunModule } from './mailgun.module';
+export type { EmailOptions, OptionsAsync } from './interfaces';
+export { MailgunService } from './mailgun.service';
