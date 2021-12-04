@@ -2,7 +2,7 @@
   "name": "nestjs-mailgun",
   "version": "2.0.1",
   "description": "NestJS provider for sending emails with mailgun",
-  "author": "Nuno Carvalhão <nuno.carvalhao@gmail.com>",
+  "author": "Nuno Carvalhão <nuno.carvalhao@gmail.com>, Stanislav V Vyaliy <wisekaa03@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
   "files": [
@@ -23,7 +23,7 @@
   "keywords": [
     "nestjs",
     "mailgun",
-    "emails"
+    "email"
   ],
   "publishConfig": {
     "access": "public"
@@ -55,14 +55,14 @@
     "@types/supertest": "2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
-    "eslint": "^8.3.0",
+    "eslint": "^8.4.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^16.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "27.4.3",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
     "rimraf": "^3.0.2",
     "supertest": "6.1.6",
     "ts-jest": "27.0.7",
