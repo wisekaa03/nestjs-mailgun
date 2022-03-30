@@ -1,5 +1,5 @@
 import { Module, Provider } from '@nestjs/common';
-import type Options from 'mailgun.js/dist/lib/interfaces/Options';
+import type Options from 'mailgun.js/interfaces/Options';
 
 import type { OptionsAsync } from './interfaces';
 import { MAILGUN_CONFIGURATION } from './constants';

@@ -1,14 +1,14 @@
 import FormData from 'form-data';
 import { Injectable, Inject } from '@nestjs/common';
 import Mailgun from 'mailgun.js';
-import Client from 'mailgun.js/dist/lib/client';
-import Options from 'mailgun.js/dist/lib/interfaces/Options';
-import type { ValidationResult } from 'mailgun.js/dist/lib/interfaces/Validate';
+import Client from 'mailgun.js/client';
+import Options from 'mailgun.js/interfaces/Options';
+import type { ValidationResult } from 'mailgun.js/interfaces/Validate';
 import {
   CreateUpdateList,
   DestroyedList,
   MailingList,
-} from 'mailgun.js/dist/lib/interfaces/lists';
+} from 'mailgun.js/interfaces/lists';
 import {
   CreateUpdateMailListMembers,
   DeletedMember,
@@ -16,8 +16,8 @@ import {
   MailListMembersQuery,
   MultipleMembersData,
   NewMultipleMembersResponse,
-} from 'mailgun.js/dist/lib/interfaces/mailListMembers';
-import type APIError from 'mailgun.js/dist/lib/error';
+} from 'mailgun.js/interfaces/mailListMembers';
+import type APIError from 'mailgun.js/error';
 import { MAILGUN_CONFIGURATION } from './constants';
 import type { EmailOptions } from './interfaces';
 
