@@ -10,6 +10,10 @@ import {
   MailingList,
 } from 'mailgun.js/interfaces/lists';
 import {
+  MailgunMessageData,
+  MessagesSendResult,
+} from 'mailgun.js/interfaces/Messages';
+import {
   CreateUpdateMailListMembers,
   DeletedMember,
   MailListMember,
@@ -19,7 +23,6 @@ import {
 } from 'mailgun.js/interfaces/mailListMembers';
 import type APIError from 'mailgun.js/error';
 import { MAILGUN_CONFIGURATION } from './constants';
-import type { EmailOptions } from './interfaces';
 
 export type MailgunError = APIError;
 
@@ -35,14 +38,18 @@ export class MailgunService {
 
   public createEmail = async (
     domain: string,
-    data: EmailOptions,
-  ): Promise<any> => {
-    const dataSend = data.templateVariables
-      ? {
-          ...data,
-          'h:X-Mailgun-Variables': JSON.stringify(data.templateVariables),
-        }
-      : data;
+    data: MailgunMessageData,
+  ): Promise<MessagesSendResult> => {
+    const dataSend = {
+      ...data,
+      'h:X-Mailgun-Variables': data.template ?? undefined,
+      'o:tracking-clicks': data['o:tracking-clicks']
+        ? data['o:tracking-clicks']
+        : true,
+      'o:tracking-opens': data['o:tracking-opens']
+        ? data['o:tracking-opens']
+        : true,
+    };
 
     return this.mailgun.messages.create(domain, dataSend);
   };
