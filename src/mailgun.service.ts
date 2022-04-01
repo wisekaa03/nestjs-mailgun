@@ -39,19 +39,7 @@ export class MailgunService {
   public createEmail = async (
     domain: string,
     data: MailgunMessageData,
-  ): Promise<MessagesSendResult> => {
-    const dataSend = {
-      ...data,
-      'o:tracking-clicks': data['o:tracking-clicks']
-        ? data['o:tracking-clicks']
-        : true,
-      'o:tracking-opens': data['o:tracking-opens']
-        ? data['o:tracking-opens']
-        : true,
-    };
-
-    return this.mailgun.messages.create(domain, dataSend);
-  };
+  ): Promise<MessagesSendResult> => this.mailgun.messages.create(domain, data);
 
   public validateEmail = async (email: string): Promise<ValidationResult> =>
     this.mailgun.validate.get(email);

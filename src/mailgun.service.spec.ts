@@ -6,6 +6,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { MAILGUN_CONFIGURATION } from './constants';
 import { MailgunService } from './mailgun.service';
 
+jest.setTimeout(15000);
 const configService = new ConfigService(dotenv.config());
 
 describe('MailgunService', () => {
@@ -25,7 +26,7 @@ describe('MailgunService', () => {
         {
           provide: MAILGUN_CONFIGURATION,
           useValue: {
-            username: 'Nuno',
+            username: 'api',
             key,
             url,
           },
