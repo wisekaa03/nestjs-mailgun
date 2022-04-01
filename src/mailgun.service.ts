@@ -42,7 +42,6 @@ export class MailgunService {
   ): Promise<MessagesSendResult> => {
     const dataSend = {
       ...data,
-      'h:X-Mailgun-Variables': data.template ?? undefined,
       'o:tracking-clicks': data['o:tracking-clicks']
         ? data['o:tracking-clicks']
         : true,
