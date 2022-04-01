@@ -1,6 +1,6 @@
 {
   "name": "nestjs-mailgun",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "NestJS provider for sending emails with mailgun",
   "author": "Stanislav V Vyaliy <wisekaa03@gmail.com>, Nuno Carvalhão <nuno.carvalhao@gmail.com>",
   "license": "MIT",
@@ -36,6 +36,11 @@
   },
   "bugs": {
     "url": "https://github.com/wisekaa03/nestjs-mailgun"
+  },
+  "resolutions": {
+    "**/**/ky": ">=0.30.0",
+    "**/**/ky-universal": ">=0.10.1",
+    "**/ky-universal/**/node-fetch": ">=3.2.3"
   },
   "peerDependencies": {
     "@nestjs/common": "^8.4.3"
