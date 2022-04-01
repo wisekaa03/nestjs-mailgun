@@ -1,7 +1,10 @@
+import { ConfigService } from '@nestjs/config';
 import { Test, TestingModule } from '@nestjs/testing';
 
 import { MAILGUN_CONFIGURATION } from './constants';
 import { MailgunService } from './mailgun.service';
+
+const configService = new ConfigService();
 
 describe('MailgunService', () => {
   let service: MailgunService;
@@ -14,8 +17,8 @@ describe('MailgunService', () => {
           provide: MAILGUN_CONFIGURATION,
           useValue: {
             username: 'Nuno',
-            key: process.env.MAILGUN_KEY,
-            // url: 'api.eu.mailgun.net',
+            key: configService.get('MAILGUN_KEY'),
+            url: configService.get('MAILGUN_URL', 'api.mailgun.net'),
           },
         },
       ],
@@ -28,15 +31,19 @@ describe('MailgunService', () => {
     expect(service).toBeDefined();
   });
 
-  it('Send email', () =>
-    expect(
-      service.createEmail(process.env.MAILGUN_DOMAIN, {
+  it('Send email', async () => {
+    const received = await service.createEmail(
+      configService.get('MAILGUN_DOMAIN'),
+      {
         from: 'package@test.com',
         subject: 'TEST',
         to: 'wisekaa03@gmail.com',
         text: 'Test was successful',
-      }),
-    ).resolves.toBeDefined());
+      },
+    );
+
+    expect(received).toBeDefined();
+  });
 
   // it('Validate email', () => {
   //   return expect(
