@@ -18,7 +18,10 @@ describe('MailgunService', () => {
           useValue: {
             username: 'Nuno',
             key: configService.get('MAILGUN_KEY'),
-            url: configService.get('MAILGUN_URL', 'api.mailgun.net'),
+            url: `https://${configService.get<string>(
+              'MAILGUN_URL',
+              'api.mailgun.net',
+            )}`,
           },
         },
       ],
