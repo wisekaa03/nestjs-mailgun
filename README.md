@@ -75,34 +75,16 @@ import { MailgunModule } from 'nestjs-mailgun';
 export class YourModule {}
 ```
 
-#### Interfaces
-
-```typescript
-interface EmailOptions {
-  from: string;
-  to: string | string[];
-  subject: string;
-  text?: string;
-  html?: string;
-  template?: string;
-  attachment?: any;
-  cc?: string | string[];
-  bcc?: string | string[];
-  'o:testmode'?: 'yes' | 'no';
-  'h:X-Mailgun-Variables'?: string;
-}
-```
-
 #### Calling Send Method
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun'
+import { MailgunMessageData } from 'nestjs-mailgun'
 
 @Injectable()
 export class YourService {
   constructor(private mailgunService: MailgunService) {
-    const options: EmailOptions = {
+    const options: MailgunMessageData = {
       from: '',
       to: '',
       subject: '',
@@ -114,8 +96,9 @@ export class YourService {
       'o:testmode': 'no',
       'h:X-Mailgun-Variables': '{"key":"value"}',
     };
-    await this.mailgunService.createEmail(domain,data);
+    await this.mailgunService.createEmail(domain, data);
   }
+}
 ```
 
 #### Calling Verify Method
@@ -124,7 +107,6 @@ To check if an email is real or not.
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -141,7 +123,6 @@ you need parameter data type CreateUpdateList which contain
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -157,7 +138,6 @@ To destroy a list of emails
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -173,7 +153,6 @@ To Get a list of emails
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -198,7 +177,6 @@ reply_preference?: 'list' | 'sender';
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -223,7 +201,6 @@ upsert?: 'yes' | 'no';
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -245,7 +222,6 @@ limit?: number;
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -261,7 +237,6 @@ To update member of the list
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
@@ -281,7 +256,6 @@ To destroy member of the list
 
 ```typescript
 import { MailgunService } from 'nestjs-mailgun';
-import { EmailOptions } from 'nestjs-mailgun';
 
 @Injectable()
 export class YourService {
