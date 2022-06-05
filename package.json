@@ -1,6 +1,6 @@
 {
   "name": "nestjs-mailgun",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "NestJS provider for sending emails with mailgun",
   "author": "Stanislav V Vyaliy <wisekaa03@gmail.com>, Nuno Carvalhão <nuno.carvalhao@gmail.com>",
   "license": "MIT",
@@ -38,28 +38,28 @@
     "url": "https://github.com/wisekaa03/nestjs-mailgun"
   },
   "peerDependencies": {
-    "@nestjs/common": "^8.4.5"
+    "@nestjs/common": "^8.4.6"
   },
   "dependencies": {
     "form-data": "^4.0.0",
     "mailgun.js": "^7.0.0",
-    "node-fetch": "^3.2.4",
+    "node-fetch": "^3.2.5",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.5"
   },
   "devDependencies": {
-    "@nestjs/common": "^8.4.5",
-    "@nestjs/config": "^2.0.1",
-    "@nestjs/core": "^8.4.5",
-    "@nestjs/platform-express": "^8.4.5",
-    "@nestjs/testing": "8.4.5",
+    "@nestjs/common": "^8.4.6",
+    "@nestjs/config": "^2.1.0",
+    "@nestjs/core": "^8.4.6",
+    "@nestjs/platform-express": "^8.4.6",
+    "@nestjs/testing": "8.4.6",
     "@types/express": "4.17.13",
-    "@types/jest": "27.5.1",
-    "@types/node": "17.0.35",
+    "@types/jest": "28.1.1",
+    "@types/node": "17.0.39",
     "@types/supertest": "2.0.12",
-    "@typescript-eslint/eslint-plugin": "^5.26.0",
-    "@typescript-eslint/parser": "^5.26.0",
-    "eslint": "^8.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint": "^8.17.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.5.0",
@@ -69,8 +69,8 @@
     "prettier": "2.6.2",
     "rimraf": "^3.0.2",
     "supertest": "6.2.3",
-    "ts-jest": "28.0.3",
-    "typescript": "^4.7.2"
+    "ts-jest": "28.0.4",
+    "typescript": "^4.7.3"
   },
   "jest": {
     "moduleFileExtensions": [
