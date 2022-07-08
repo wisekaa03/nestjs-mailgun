@@ -1,6 +1,6 @@
 {
   "name": "nestjs-mailgun",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "NestJS provider for sending emails with mailgun",
   "author": "Stanislav V Vyaliy <wisekaa03@gmail.com>, Nuno Carvalhão <nuno.carvalhao@gmail.com>",
   "license": "MIT",
@@ -45,8 +45,12 @@
   "resolutions": {
     "**/**/multer": ">=1.4.5-lts.1"
   },
+  "dependencies": {
+    "@nestjs/common": "^8.4.7 || ^9.0.1",
+    "form-data": "^4.0.0",
+    "mailgun.js": "^7.0.4"
+  },
   "devDependencies": {
-    "@nestjs/common": "^9.0.1",
     "@nestjs/config": "^2.1.0",
     "@nestjs/core": "^9.0.1",
     "@nestjs/platform-express": "^9.0.1",
@@ -65,7 +69,6 @@
     "eslint-plugin-prettier": "^4.2.1",
     "form-data": "^4.0.0",
     "jest": "28.1.2",
-    "mailgun.js": "^7.0.4",
     "node-fetch": "^3.2.6",
     "prettier": "2.7.1",
     "reflect-metadata": "^0.1.13",

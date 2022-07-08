@@ -562,7 +562,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@nestjs/common@^9.0.1":
+"@nestjs/common@^8.4.7 || ^9.0.1":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-9.0.1.tgz#44447878e0c63adfba9f76782e9322603127e1af"
   integrity sha512-w0PSRP+M4vy4XThdkaF6ya1mEbWiMDCAd1beEoeGGnFXnsiRpNj7mb58Lp8SrnfwrExiiCnrKR4ei96StpeW/Q==
