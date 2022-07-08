@@ -562,7 +562,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@nestjs/common@^8.4.7 || ^9.0.1":
+"@nestjs/common@^9.0.1":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-9.0.1.tgz#44447878e0c63adfba9f76782e9322603127e1af"
   integrity sha512-w0PSRP+M4vy4XThdkaF6ya1mEbWiMDCAd1beEoeGGnFXnsiRpNj7mb58Lp8SrnfwrExiiCnrKR4ei96StpeW/Q==
@@ -571,10 +571,10 @@
     tslib "2.4.0"
     uuid "8.3.2"
 
-"@nestjs/config@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/config/-/config-2.1.0.tgz#334d6c3211f288eb40b1f8e2dbfbaf50b538f300"
-  integrity sha512-wUpt1/QJEN7xnJl4pM3c9rHrY1widq2yPOZfjaMD1//XAP9LLHTaW+RxSEG6BSGIm3w4wGtjco+gKNB2WL7yRg==
+"@nestjs/config@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/config/-/config-2.2.0.tgz#9f3da35f7c4a58724c0a0817d6f04b66e6703430"
+  integrity sha512-78Eg6oMbCy3D/YvqeiGBTOWei1Jwi3f2pSIZcZ1QxY67kYsJzTRTkwRT8Iv30DbK0sGKc1mcloDLD5UXgZAZtg==
   dependencies:
     dotenv "16.0.1"
     dotenv-expand "8.0.3"
