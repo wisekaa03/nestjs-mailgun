@@ -562,7 +562,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@nestjs/common@^8.4.7 || ^9.0.1":
+"@nestjs/common@^9.0.1":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-9.0.1.tgz#44447878e0c63adfba9f76782e9322603127e1af"
   integrity sha512-w0PSRP+M4vy4XThdkaF6ya1mEbWiMDCAd1beEoeGGnFXnsiRpNj7mb58Lp8SrnfwrExiiCnrKR4ei96StpeW/Q==
@@ -581,7 +581,7 @@
     lodash "4.17.21"
     uuid "8.3.2"
 
-"@nestjs/core@^8.4.7 || ^9.0.1":
+"@nestjs/core@^9.0.1":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-9.0.1.tgz#cac19c44d46f0d8ad3eebf4918ce9ec4a7da5bf0"
   integrity sha512-gdrjQhqPN588pmlwzRWA0NsLhWiACUX4Me2Y1BI9Jm5dzmWMgde/zUfFmkvUKiONqKQoZagcCzFtWSWuYjTENQ==
@@ -594,7 +594,7 @@
     tslib "2.4.0"
     uuid "8.3.2"
 
-"@nestjs/platform-express@^8.4.7 || ^9.0.1":
+"@nestjs/platform-express@^9.0.1":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-9.0.1.tgz#5b9cbf7277d1503bca42841c2ccbf7e5e2450ccc"
   integrity sha512-fL/OWwL6wQwksPT0uGzfpIAEQt5Tt/vHa8ENsswWfiSI3G2MjC9E3iK1R0GVobe+XelQM7Dxf9DkYyHN7xHQKg==
@@ -605,7 +605,7 @@
     multer "1.4.4-lts.1"
     tslib "2.4.0"
 
-"@nestjs/testing@^8.4.7 || ^9.0.1":
+"@nestjs/testing@^9.0.1":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-9.0.1.tgz#4f1b947597fb0640069ea7d0dcfe8122380550fc"
   integrity sha512-EyyJY+DQi4K5X6aBdoIqtAUsS3KwrdVBbKRTINmytjnmKHzg/Sy6oYyKTRaEJTeYgshzB9Ca20tSKEbMr36NSg==
