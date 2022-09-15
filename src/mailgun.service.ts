@@ -18,6 +18,7 @@ import {
   DeletedMember,
   MailListMember,
   MailListMembersQuery,
+  MailListMembersResult,
   MultipleMembersData,
   NewMultipleMembersResponse,
 } from 'mailgun.js/interfaces/mailListMembers';
@@ -68,7 +69,7 @@ export class MailgunService {
   public listGetMembers = async (
     mailListAddress: string,
     query?: MailListMembersQuery,
-  ): Promise<MailListMember[]> =>
+  ): Promise<MailListMembersResult> =>
     this.mailgun.lists.members.listMembers(mailListAddress, query);
 
   public listCreateMembers = async (
