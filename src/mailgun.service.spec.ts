@@ -17,9 +17,9 @@ describe('MailgunService', () => {
 
   beforeAll(async () => {
     domain = configService.get('MAILGUN_DOMAIN');
-    console.log('Domain', domain);
+    console.debug(`Domain: ${domain}`);
     const key = configService.get('MAILGUN_KEY');
-    console.log('Key', key);
+    console.debug(`Key: ${key}`);
     fromEmail = `postmaster@${domain}`;
     const url = `https://${configService.get<string>(
       'MAILGUN_URL',
