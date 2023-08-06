@@ -38,8 +38,13 @@ export class MailgunService {
     data: MailgunMessageData,
   ): Promise<MessagesSendResult> => this.mailgun.messages.create(domain, data);
 
-  public validateEmail = async (email: string): Promise<ValidationResult> =>
-    this.mailgun.validate.get(email);
+  public validateEmail = async (email: string): Promise<ValidationResult> => {
+    try {
+      return await this.mailgun.validate.get(email);
+    } catch (e: unknown) {
+      throw new Error(e as string);
+    }
+  };
 
   public createList = async (data: CreateUpdateList): Promise<MailingList> =>
     this.mailgun.lists.create(data);

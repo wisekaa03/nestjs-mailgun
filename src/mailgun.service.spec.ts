@@ -17,7 +17,9 @@ describe('MailgunService', () => {
 
   beforeAll(async () => {
     domain = configService.get('MAILGUN_DOMAIN');
+    console.log('Domain', domain);
     const key = configService.get('MAILGUN_KEY');
+    console.log('Key', key);
     fromEmail = `postmaster@${domain}`;
     const url = `https://${configService.get<string>(
       'MAILGUN_URL',
@@ -55,10 +57,4 @@ describe('MailgunService', () => {
 
     expect(received).toBeDefined();
   });
-
-  // it('Validate email', () => {
-  //   return expect(
-  //     service.validateEmail('wisekaa03@gmail.com'),
-  //   ).resolves.toBeDefined();
-  // });
 });
