@@ -12,6 +12,6 @@ jobs:
           node-version: 18
       - run: yarn install
       - env:
-          MAILGUN_DOMAIN: ${{ MAILGUN_DOMAIN }}
-          MAILGUN_KEY: ${{ MAILGUN_KEY }}
+          MAILGUN_DOMAIN: ${{ secrets.MAILGUN_DOMAIN }}
+          MAILGUN_KEY: ${{ secrets.MAILGUN_KEY }}
         run: yarn test
