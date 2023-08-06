@@ -12,14 +12,18 @@ const configService = new ConfigService(dotenv.config());
 describe('MailgunService', () => {
   let service: MailgunService;
   let domain: string;
+  let fromEmail: string;
+  const toEmail: string = 'stanislav@wisekaa.dev';
 
   beforeAll(async () => {
     domain = configService.get('MAILGUN_DOMAIN');
     const key = configService.get('MAILGUN_KEY');
+    fromEmail = configService.get(`postmaster@${domain}`);
     const url = `https://${configService.get<string>(
       'MAILGUN_URL',
       'api.mailgun.net',
     )}`;
+
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         MailgunService,
@@ -43,9 +47,9 @@ describe('MailgunService', () => {
 
   it('Send email', async () => {
     const received = await service.createEmail(domain, {
-      from: 'package@test.com',
+      from: fromEmail,
+      to: toEmail,
       subject: 'TEST',
-      to: 'wisekaa03@gmail.com',
       text: 'Test was successful',
     });
 
